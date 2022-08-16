@@ -38,7 +38,6 @@ export class SharedService {
     public ngZone: NgZone,
     public modalCtrl: ModalController
   ) {
-    this.user$ = new ReplaySubject();
     this.listenUser();
   }
 
@@ -82,5 +81,9 @@ export class SharedService {
       ? targetUrl
       : ' https://pokeapi.co/api/v2/pokemon/?limit=25';
     return Axios.get<PokemonResponse>(targetUrl).pipe(map((res) => res.data));
+  }
+
+  soma(a, b) {
+    return a + b;
   }
 }

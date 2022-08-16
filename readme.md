@@ -9,6 +9,13 @@
 - [Ionic Project] npm link stencil
 - [Ionic Project] ionic serve
 
+# Jasmine Test
+
+- Foi realizado teste nas duas requisições do sistema
+- getLocalPokemons: Results com 1000 elementos a ser paginado de 25 em 25 na view.
+- getServerPokemons: Results com 25 elementos a ser paginado diretamente do server.
+- Executar o teste: ng test --main src/app/services/shared.service.spec.ts
+
 # Capacitor Utils
 
 - [Ionic Project] ionic capacitor add android
