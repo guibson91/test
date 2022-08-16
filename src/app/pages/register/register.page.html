@@ -12,8 +12,8 @@
     <section class="item" [ngClass]="{'error': form.controls.cpfCnpj.touched &&
     form.controls.cpfCnpj.invalid}">
       <ion-label position="stacked" for="cpfCnpj">CPF/CNPJ</ion-label>
-      <ion-input type="text" name="cpfCnpj" formControlName="cpfCnpj" placeholder="CPF/CNPJ"
-        [brmasker]="{person: true}"></ion-input>
+      <ion-input type="text" name="cpfCnpj" formControlName="cpfCnpj" [brmasker]="{person: true}">
+      </ion-input>
     </section>
 
     <app-nano-address [form]="form"></app-nano-address>

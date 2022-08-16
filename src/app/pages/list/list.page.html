@@ -1,9 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>list</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-nano-header iconLeft="sync-outline" (leftClick)="changeList()" title="Listagem"
+  iconRight="log-out-outline" (rightClick)="logout()"></app-nano-header>
 
 <ion-content>
 
+  <app-nano-loading title="Carregando pokemons" [loading]="loading"></app-nano-loading>
+
+  <pokemon-list [list]="currentResponse?.results"></pokemon-list>
+
 </ion-content>
+
+<app-preview-next-footer [showPrevious]="currentResponse?.previous ? true : false"
+  [showNext]="currentResponse?.next ? true : false" (previous)="previous()" (next)="next()">
+</app-preview-next-footer>

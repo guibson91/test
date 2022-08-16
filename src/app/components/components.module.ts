@@ -11,6 +11,7 @@ import { NanoAddressComponent } from './nano-address/nano-address.component';
 import { NanoFormComponent } from './nano-form/nano-form.component';
 import { NanoButtonsComponent } from './nano-form/nano-buttons/nano-buttons.component';
 import { NanoLoadingComponent } from './nano-loading/nano-loading.component';
+import { PreviewNextFooterComponent } from './preview-next-footer/preview-next-footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NanoLoadingComponent } from './nano-loading/nano-loading.component';
     NanoButtonsComponent,
     NanoLoadingComponent,
     NanoTitleComponent,
+    PreviewNextFooterComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +43,7 @@ import { NanoLoadingComponent } from './nano-loading/nano-loading.component';
     NanoButtonsComponent,
     NanoLoadingComponent,
     NanoTitleComponent,
+    PreviewNextFooterComponent,
   ],
 })
 export class ComponentsModule {}

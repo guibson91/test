@@ -1,0 +1,15 @@
+ion-footer {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    ion-button {
+        ion-icon {
+            font-size: 2em;
+        }
+        &.left {
+            float: left;
+        }
+        &.right {
+            float: right;
+        }
+    }
+}

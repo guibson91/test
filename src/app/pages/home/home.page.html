@@ -1,14 +1,10 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-nano-header iconLeft="sync-outline" (leftClick)="changeList()" title="Home"
+  iconRight="log-out-outline" (rightClick)="logout()"></app-nano-header>
 
-<ion-content [fullscreen]="true">
-
-  <gl-background-video src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
-    poster="https://sample-videos.com/img/Sample-png-image-500kb.png"></gl-background-video>
-
+<ion-content>
+  <pokemon-list [list]="pages[currentPageIndex]"></pokemon-list>
 </ion-content>
+
+<app-preview-next-footer [showPrevious]="currentPageIndex > 0"
+  [showNext]="currentPageIndex < pages.length - 1" (previous)="previous()" (next)="next()">
+</app-preview-next-footer>

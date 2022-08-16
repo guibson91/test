@@ -1,0 +1,10 @@
+<ion-footer class="ion-no-border">
+  <ion-button class="left" (click)="clickPrevious()" fill="clear" *ngIf="showPrevious">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+    Anterior
+  </ion-button>
+  <ion-button class="right" (click)="clickNext()" fill="clear" *ngIf="showNext">
+    Próximo
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-button>
+</ion-footer>

@@ -15,10 +15,11 @@ import {
   NavController,
   Platform,
 } from '@ionic/angular';
+import { PokemonResponse } from '../models/pokemonResponse';
+import data from './../../data/pokemons.json';
 
 /**
  * Variáveis e métodos globais do sistema
- * Responsável por armazenar tudo de acesso compartilhado
  *
  * @example o usuário e o ReplaySubject que o controla é definido aqui
  */
@@ -26,8 +27,6 @@ import {
   providedIn: 'root',
 })
 export class SharedService {
-  api: any;
-
   user: User; //auth user
   userSubscription: Subscription;
   user$: ReplaySubject<User> = new ReplaySubject<User>(1); //auth user observer
@@ -44,22 +43,15 @@ export class SharedService {
     public modalCtrl: ModalController
   ) {
     this.listenUser();
-    this.initAPI();
-  }
-
-  initAPI() {
-    this.api = environment.production
-      ? 'https://us-central1-weho-production.cloudfunctions.net/'
-      : 'https://us-central1-weho-production.cloudfunctions.net/';
   }
 
   /**
    * Atualizar usuário do sistema toda vez que ele alterar
    */
   listenUser() {
-    this.userSubscription = this.user$.subscribe((u) => {
-      console.log('Usuário ESCUTA: ', u);
-      this.user = u;
+    this.userSubscription = this.user$.subscribe((user) => {
+      console.log('Usuário atualizado: ', user);
+      this.user = user;
       if (!this.user) {
         return this.handleLogoutUser();
       }
@@ -81,6 +73,19 @@ export class SharedService {
           return addressDTO(res.data as CorreiosResponse) as AddressType;
         }
       })
+    );
+  }
+
+  getLocalPokemons(): PokemonResponse {
+    return data;
+  }
+
+  getServerPokemons(targetUrl?) {
+    targetUrl = targetUrl
+      ? targetUrl
+      : ' https://pokeapi.co/api/v2/pokemon/?limit=25';
+    return Axios.get<PokemonResponse>(targetUrl).pipe(
+      map((res) => res.data)
     );
   }
 }
