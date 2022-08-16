@@ -1,0 +1,7 @@
+{
+  "name": "test-fast-cash",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

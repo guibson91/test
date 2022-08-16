@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "test-fast-cash",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
