@@ -1,5 +1,6 @@
 # Executar o código
 
+- git clone https://github.com/guibson91/stencil
 - [Stencil Project] npm install
 - [Stencil Project] npm run build
 - [Stencil Project] npm link
