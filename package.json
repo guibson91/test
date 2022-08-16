@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +12,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "config": {
+    "ionic_copy": "./config/copy.config.js"
+  },
   "dependencies": {
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0",
@@ -19,12 +22,24 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@capacitor/android": "4.0.1",
     "@capacitor/app": "4.0.1",
     "@capacitor/core": "4.0.1",
     "@capacitor/haptics": "4.0.1",
     "@capacitor/keyboard": "4.0.1",
     "@capacitor/status-bar": "4.0.1",
+    "@ionic-native/core": "^5.36.0",
+    "@ionic-native/in-app-browser": "^5.36.0",
+    "@ionic-native/preview-any-file": "^5.36.0",
     "@ionic/angular": "^6.1.9",
+    "axios": "^0.27.2",
+    "axios-observable": "^1.5.0",
+    "br-mask": "0.0.10",
+    "cordova-plugin-inappbrowser": "^5.0.0",
+    "cordova-plugin-preview-any-file": "^0.2.9",
+    "cpf-cnpj-validator": "^1.0.3",
+    "firebase": "^9.9.2",
+    "gl-ionic-background-video": "0.0.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

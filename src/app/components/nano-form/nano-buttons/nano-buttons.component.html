@@ -1,0 +1,19 @@
+<div class="container-buttons ion-padding" style="display: flex">
+  <div style="text-align: start; flex-grow: 1">
+    <ion-button icon-left fill="clear" (click)="clickRemove()" color="danger"
+      *ngIf="formGroup?.value?.id && canRemove">
+      <ion-icon name="trash-outline"></ion-icon>
+      Remover
+    </ion-button>
+  </div>
+  <div>
+    <ion-button icon-left fill="clear" (click)="clickBack()" color="medium">
+      <ion-icon name="close"></ion-icon>
+      Cancelar
+    </ion-button>
+    <ion-button icon-left (click)="clickSave()" [disabled]="!formGroup.valid" color="primary">
+      <ion-icon name="checkmark-outline"></ion-icon>
+      {{formGroup?.value?.id ? 'Atualizar' : 'Salvar'}}
+    </ion-button>
+  </div>
+</div>

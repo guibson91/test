@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "760743401932",
+    "project_id": "fast-cash-70922",
+    "storage_bucket": "fast-cash-70922.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760743401932:android:93e33d64d08b34f2f72569",
+        "android_client_info": {
+          "package_name": "br.com.nanocode.fastcash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760743401932-1oqappp6vt63f75lqhmkevt4sobspntt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwxrtL5yhVa8rHKl6s8sI7ASODz4WtE1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760743401932-1oqappp6vt63f75lqhmkevt4sobspntt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

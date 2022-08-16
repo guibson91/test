@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,86 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+//Remover destaques de borda nos ion-items (válido, inválido e foco)
+ion-item {
+    --highlight-color-valid: transparent;
+    --highlight-color-invalid: transparent;
+    --highlight-color-focused: var(--ion-color-light);
+}
+
+p {
+    // color: gray;
+    font-size: 0.8em;
+}
+
+//	-------------------------------------------------
+//	FORM DEFAULT
+//	--------------------------------------------------
+
+.form-default {
+    padding: 0.5em;
+    padding-top: 1em;
+
+    .text-input,
+    .select-text,
+    .datetime-text {
+        font-size: 14px;
+    }
+    ion-label {
+        font-size: 1em !important;
+        font-weight: 600;
+        padding-left: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    ion-input,
+    ion-datetime,
+    ion-select,
+    ion-item.form {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin-top: 5px;
+        color: var(--ion-color-text) !important;
+        --padding-start: 0.5em !important;
+    }
+    .container-address {
+        section.item {
+            min-width: 47%;
+            max-width: 47%;
+        }
+    }
+    ion-select.clear {
+        border: none;
+        border-radius: 0px;
+    }
+    .error {
+        ion-input {
+            border: 1px solid red;
+        }
+        ion-label {
+            color: red;
+        }
+    }
+}
+
+.hideScrollbar {
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+}
+
+//LINK
+.link:hover {
+    cursor: pointer;
+}
+
+//ION-SEARCHBAR
+
+ion-searchbar {
+    --padding-start: 0;
+    --pading-end: 0;
+    input {
+        padding-left: 1em !important;
+    }
+}

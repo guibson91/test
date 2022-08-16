@@ -1,0 +1,12 @@
+section.address {
+    .container-address {
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+            margin-right: 0.5em;
+            ion-input.error-input {
+                border: 1px solid red;
+            }
+        }
+    }
+}

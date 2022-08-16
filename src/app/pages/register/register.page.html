@@ -1,0 +1,37 @@
+<app-nano-header [back]="true" title="Cadastro"></app-nano-header>
+
+<ion-content>
+
+  <app-nano-form [formGroup]="form" [path]="path">
+
+    <app-nano-title title="Informações Gerais"></app-nano-title>
+    <section class="item">
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </section>
+    <section class="item" [ngClass]="{'error': form.controls.cpfCnpj.touched &&
+    form.controls.cpfCnpj.invalid}">
+      <ion-label position="stacked" for="cpfCnpj">CPF/CNPJ</ion-label>
+      <ion-input type="text" name="cpfCnpj" formControlName="cpfCnpj" placeholder="CPF/CNPJ"
+        [brmasker]="{person: true}"></ion-input>
+    </section>
+
+    <app-nano-address [form]="form"></app-nano-address>
+
+    <app-nano-title title="Autenticação"></app-nano-title>
+    <section class="item" [ngClass]="{'error': form.controls.email.touched &&
+    form.controls.email.invalid}">
+      <ion-label position="stacked">E-mail</ion-label>
+      <ion-input formControlName="email" type="email" [readonly]="!!form.value.id" [email]="true">
+      </ion-input>
+    </section>
+    <section class="item" [ngClass]="{'error': form.controls.password.touched &&
+    form.controls.password.invalid}">
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input formControlName="password" type="password" [readonly]="!!form.value.id">
+      </ion-input>
+    </section>
+
+  </app-nano-form>
+
+</ion-content>

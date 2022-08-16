@@ -1,0 +1,43 @@
+<section class="address">
+  <app-nano-title title="Endereço"></app-nano-title>
+  <div *ngIf="form && form.controls['address']" [formGroup]="form">
+    <div class="container-address" formGroupName="address">
+      <section class="item"
+        [ngClass]="{'error': form.get('address').get('cep').touched && (form.get('address').get('cep').invalid || errorCep)}">
+        <ion-label position="stacked">CEP</ion-label>
+        <ion-input [brmasker]="{mask: '00.000-000', type:'num'}" maxlength="10" type="tel"
+          formControlName="cep" (input)="handleCepChange($event)">
+        </ion-input>
+      </section>
+      <section class="item"
+        [ngClass]="{'error': errorCep && form.get('address').get('city').invalid}">
+        <ion-label position="stacked">Cidade</ion-label>
+        <ion-input formControlName="city" [readonly]="true">
+        </ion-input>
+      </section>
+      <section class="item"
+        [ngClass]="{'error': errorCep && form.get('address').get('state').invalid}">
+        <ion-label position="stacked">Estado</ion-label>
+        <ion-input formControlName="state" [readonly]="true">
+        </ion-input>
+      </section>
+      <section class="item"
+        [ngClass]="{'error': form.get('address').get('street').touched && form.get('address').get('street').invalid}">
+        <ion-label position="stacked">Rua</ion-label>
+        <ion-input formControlName="street">
+        </ion-input>
+      </section>
+      <section class="item"
+        [ngClass]="{'error': form.get('address').get('streetNumber').touched && form.get('address').get('streetNumber').invalid}">
+        <ion-label position="stacked">Número</ion-label>
+        <ion-input formControlName="streetNumber">
+        </ion-input>
+      </section>
+      <section class="item">
+        <ion-label position="stacked">Complemento</ion-label>
+        <ion-input formControlName="complement">
+        </ion-input>
+      </section>
+    </div>
+  </div>
+</section>

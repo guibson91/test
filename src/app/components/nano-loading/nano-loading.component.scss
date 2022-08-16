@@ -1,0 +1,17 @@
+section.loading {
+    padding: 0px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    h1 {
+        font-size: 1em;
+        color: gray;
+        margin: 0;
+        margin-left: 1em;
+    }
+    ion-spinner {
+        width: 20px !important;
+        color: gray;
+    }
+}

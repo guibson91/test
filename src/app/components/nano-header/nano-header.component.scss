@@ -1,0 +1,19 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            text-align: center;
+        }
+        ion-icon.left {
+            font-size: 2em;
+            margin-left: 4px;
+        }
+        ion-badge.right {
+            position: absolute;
+            top: 15px;
+            right: 6px;
+            border-radius: 50%;
+            padding-left: 6px;
+            padding-right: 6px
+        }
+    }
+}

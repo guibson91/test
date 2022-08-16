@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar [color]="'primary'">
+
+    <ion-buttons *ngIf="back" slot="start" style="min-width: 42px;">
+      <ion-button fill="clear" (click)="backClicked()" class="link">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons *ngIf="!back && iconLeft" slot="start" (click)="clickLeft()" class="link">
+      <ion-icon class="left" [name]="iconLeft" slot="icon-only"></ion-icon>
+    </ion-buttons>
+
+
+    <ion-buttons *ngIf="!back && !iconLeft" slot="start" style="min-width: 42px;">
+      &nbsp;
+    </ion-buttons>
+
+    <ion-title *ngIf="title">{{title}}</ion-title>
+
+    <ion-buttons slot="end" style="min-width: 42px;" *ngIf="iconRight" (click)="clickRight()" class="link">
+      <ion-icon [name]="iconRight" slot="icon-only"></ion-icon>
+      <ion-badge color="danger" class="right" *ngIf="badgeRight > 0">{{badgeRight}}</ion-badge>
+    </ion-buttons>
+
+    <ion-buttons slot="end" style="min-width: 42px;" *ngIf="!iconRight">
+      &nbsp;
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>

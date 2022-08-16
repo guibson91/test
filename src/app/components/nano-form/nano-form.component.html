@@ -1,0 +1,4 @@
+<form [formGroup]="formGroup" class="form-default">
+    <ng-content></ng-content>
+    <app-nano-buttons (remove)="remove()" (save)="save()" [formGroup]="formGroup" *ngIf="allowButtons"></app-nano-buttons>
+</form>

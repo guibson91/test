@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "test-fast-cash",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "br.com.nanocode.fastcash",
+  "appName": "Fast Cash",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }

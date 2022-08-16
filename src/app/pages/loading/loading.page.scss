@@ -1,0 +1,20 @@
+ion-content {
+    .container-center {
+        text-align: center;
+        height: 100%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: calc(50vh - 3em);
+    }
+    h1 {
+        color: gray;
+        font-size: 1em;
+    }
+    ion-spinner {
+        color: gray;
+        width: 2em;
+        height: 2em;
+        margin-top: 1em;
+    }
+}

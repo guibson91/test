@@ -1,0 +1,54 @@
+<ion-content>
+
+  <!-- Stencil Integration Test -->
+  <!-- <gl-background-video src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4"
+    poster="https://sample-videos.com/img/Sample-png-image-500kb.png"></gl-background-video> -->
+
+  <section class="top">
+    <h1 class="title">Fast Cash Project</h1>
+    <h1 class="description">Projeto teste para empresa Fast Cash</h1>
+  </section>
+  
+  <section class="bottom form-default">
+    <time-ago [time]="now" seconds="true"></time-ago>
+    <div no-lines lines="none" class="item">
+      <ion-label position="stacked" mode="md">E-mail</ion-label>
+      <ion-input type="text" inputmode="email" [autocomplete]="false" [pattern]="'email'"
+        [(ngModel)]="email">
+      </ion-input>
+    </div>
+    <div lines="none" class="item">
+      <ion-label position="stacked" mode="md">Senha</ion-label>
+      <div class="container-password">
+        <ion-input [type]="visiblePassword ? 'text' : 'password'" inputmode="password"
+          [autocomplete]="false" [pattern]="'password'" [(ngModel)]="password"></ion-input>
+        <ion-icon name="eye" (click)="toggleVisibility()" tappable *ngIf="visiblePassword">
+        </ion-icon>
+        <ion-icon name="eye-off-outline" (click)="toggleVisibility()" tappable
+          *ngIf="!visiblePassword"></ion-icon>
+      </div>
+    </div>
+
+    <div class="container-buttons">
+      <ion-button expand="block" (click)="login(email, password)" class="enter">Entrar</ion-button>
+      <p class="forgot-password" tappable (click)="openForgotPassword(email)">
+        Esqueci minha senha
+      </p>
+      <p>Ainda não é usuário?</p>
+      <ion-button class="register" expand="block" fill="outline"
+        (click)="pushPage('register')">Cadastre-se agora
+      </ion-button>
+    </div>
+  </section>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-button (click)="linkService.openLink('https://www.linkedin.com/in/guibson91/')" fill="clear">
+    <ion-icon name="logo-linkedin"></ion-icon>
+  </ion-button>
+  <ion-button
+    (click)="linkService.openPDF('https://firebasestorage.googleapis.com/v0/b/fast-cash-70922.appspot.com/o/files%2FGuibson_Martins_CV__PT_.pdf?alt=media&token=713b694c-7c23-44ec-bdac-15d86e3cf2ab')"
+    fill="clear">
+    <ion-icon name="document-text-outline"></ion-icon>
+  </ion-button>
+</ion-footer>
