@@ -78,10 +78,9 @@ export class SharedService {
   }
 
   getServerPokemons(targetUrl?) {
-    return [];
-    // targetUrl = targetUrl
-    //   ? targetUrl
-    //   : ' https://pokeapi.co/api/v2/pokemon/?limit=25';
-    // return Axios.get<PokemonResponse>(targetUrl).pipe(map((res) => res.data));
+    targetUrl = targetUrl
+      ? targetUrl
+      : ' https://pokeapi.co/api/v2/pokemon/?limit=25';
+    return Axios.get<PokemonResponse>(targetUrl).pipe(map((res) => res.data));
   }
 }
