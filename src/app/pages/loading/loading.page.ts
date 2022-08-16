@@ -1,8 +1,9 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
-import { AuthService } from 'src/app/services/auth.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { SuperPage } from 'src/app/util/super';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 /**
  * Página inicial do sistema que controla o fluxo
@@ -21,7 +22,8 @@ export class LoadingPage extends SuperPage implements OnInit {
   }
 
   ngOnInit() {
-    this.shared.user$.pipe(first()).subscribe((user) => {
+    this.shared.user$.pipe(first()).subscribe(async (user) => {
+      await SplashScreen.hide();
       if (user) {
         this.rootPage();
       } else {

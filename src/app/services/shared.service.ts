@@ -1,10 +1,10 @@
 import Axios, { AxiosObservable } from 'axios-observable';
+import data from '../../data/pokemons.json';
 import { addressDTO, AddressType, CorreiosResponse } from '../models/util';
-import { environment } from 'src/environments/environment';
 import { Injectable, NgZone } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable, ReplaySubject, Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { PokemonResponse } from '../models/pokemonResponse';
 import { SystemService } from './system.service';
 import { User } from '../models/user';
 import {
@@ -15,8 +15,6 @@ import {
   NavController,
   Platform,
 } from '@ionic/angular';
-import { PokemonResponse } from '../models/pokemonResponse';
-import data from './../../data/pokemons.json';
 
 /**
  * Variáveis e métodos globais do sistema
@@ -37,11 +35,10 @@ export class SharedService {
     public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
-    public menuCtrl: MenuController,
-    public router: Router,
     public ngZone: NgZone,
     public modalCtrl: ModalController
   ) {
+    this.user$ = new ReplaySubject();
     this.listenUser();
   }
 
@@ -81,11 +78,10 @@ export class SharedService {
   }
 
   getServerPokemons(targetUrl?) {
-    targetUrl = targetUrl
-      ? targetUrl
-      : ' https://pokeapi.co/api/v2/pokemon/?limit=25';
-    return Axios.get<PokemonResponse>(targetUrl).pipe(
-      map((res) => res.data)
-    );
+    return [];
+    // targetUrl = targetUrl
+    //   ? targetUrl
+    //   : ' https://pokeapi.co/api/v2/pokemon/?limit=25';
+    // return Axios.get<PokemonResponse>(targetUrl).pipe(map((res) => res.data));
   }
 }
