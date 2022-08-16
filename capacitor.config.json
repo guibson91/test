@@ -2,5 +2,10 @@
   "appId": "br.com.nanocode.fastcash",
   "appName": "Fast Cash",
   "webDir": "www",
-  "bundledWebRuntime": false
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1000
+    }
+  }
 }
